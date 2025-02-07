@@ -2,17 +2,24 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
 # Load the pre-trained model and tokenizer
-model_name = "microsoft/deberta-large"
+model_name = "microsoft/DialoGPT-large"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # Initialize chat history
 chat_history_ids = None
 
+# System prompt
+print("Welcome to the chatbot! Type 'quit' to exit.")
+
 # Chatbot loop
 while True:
     # Get user input
     user_input = input(">> User: ")
+    
+    # Exit condition
+    if user_input.lower() == 'quit':
+        break
     
     # Tokenize user input and append to chat history
     new_input_ids = tokenizer.encode(user_input + tokenizer.eos_token, return_tensors='pt')
