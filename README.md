@@ -1,6 +1,6 @@
 # chatbot-test
 To run, use the following commands in the terminal:
-python -m venv .env
-cd bot
-source .env/bin/activate
-python main.py
+1>'python -m venv .env'
+2>'cd bot'
+3>'source .env/bin/activate'
+4>'python main.py'
