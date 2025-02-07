@@ -2,7 +2,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
 # Load the pre-trained model and tokenizer
-model_name = "microsoft/DialoGPT-medium"
+model_name = "microsoft/deberta-large"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
